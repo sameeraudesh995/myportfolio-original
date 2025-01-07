@@ -428,3 +428,39 @@ section.active{
     border-radius: 50%;
     margin-left: -2rem;
 }
+.resume-details.skills .resume-list{
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    height: auto;
+    overflow: visible;
+}
+.resume-details.skills .resume-item{
+    position: relative;
+    align-items: center;
+    height: auto;
+}
+.resume-details.skills .resume-item i{
+    font-size: 8.5rem;
+    transition: .5s;
+}
+.resume-details.skills .resume-item:hover i{
+    color: var(--main-color);
+}
+.resume-details.skills .resume-item span{
+    position: absolute;
+    top: -20%;
+    background: var(--white-color);
+    color: var(--bg-color);
+    font-size: 1.6rem;
+    padding: .5rem 1rem;
+    border-radius: .6rem;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(.9);
+    transition: .2s;
+
+}
+.resume-details.skills .resume-item:hover span{
+    top:-25%;
+    opacity: 1;
+    transform: scale(1);
+}
