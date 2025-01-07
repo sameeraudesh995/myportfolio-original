@@ -12,9 +12,10 @@
 :root{
     --bg-color:#1f242d;
     --second-bg-color:#323946;
-    --main-color:#7cf03d;
+    --main-color:#7cf03d;   
     --white-color:#fff;
     --disabled-color:#fff3;
+    /* #00FFED */
 
 }
 html{
@@ -282,4 +283,148 @@ section.active{
 }
 .services-box p{
     font-size: 1.6rem;
+}
+
+/* resume area */
+.resume-container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+}
+.resume-box h2{
+ font-size: 4.5rem;
+}
+.resume-box p{
+    font-size: 1.6rem;
+    /* margin: 2rem 0 2.5rem; */
+}
+.resume-box .describe{
+    margin: 2rem 0 2.5rem;
+}
+.resume-box .resume-btn{
+    width: 100%;
+    height: 5.3rem;
+    background: var(--second-bg-color);
+    border: .2rem solid var(--second-bg-color);
+    font-size: 1.6rem;
+    color: var(--white-color);
+    font-weight: 500;
+    margin-bottom: 2rem;
+    border-radius: .8rem;
+    cursor: pointer;
+}
+.resume-box .resume-btn.active{
+    border-color: var(--main-color);
+    color: var(--white-color);
+}
+
+.resume-details{
+    display: none;
+}
+.resume-details.active{
+    display: block;
+}
+.resume-box .heading{
+    font-size: 3.5rem;
+    text-align: left;
+}
+
+
+/* knignt rider btn */
+ 
+.knight-rider-btn {
+    padding: 10px 20px;  
+    text-align: center;  
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;  
+    color: var(--white-color);
+    background: var(--bg-color);
+    border: 2px solid var(--main-color);
+    border-radius: 5px;  
+    cursor: pointer;
+    transition: all 0.3s ease;  
+}
+
+.knight-rider-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+    rgba(124, 240, 61, 0) 0%,    
+    rgba(124, 240, 61, 0.5) 50%, 
+    rgba(124, 240, 61, 0) 100%); 
+    animation: knight-rider 1.2s linear infinite;
+    animation-duration: 5s;
+    z-index: 0;
+}
+
+.knight-rider-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes knight-rider {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: -100%;
+    }
+}
+.resume-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+    height: 45rem;
+    overflow: auto;
+}
+.resume-list::-webkit-scrollbar{
+    width: .7rem;
+}
+.resume-list::-webkit-scrollbar-thumb{
+    background: transparent;
+    border-radius: 1rem;
+}
+.resume-list:hover::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+}
+.resume-list .resume-item{
+    background: var(--second-bg-color);
+    border-radius: .8rem;
+    padding: 3rem 2.5rem;
+    height: calc((45rem - 2rem) / 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.resume-item .year{
+    color: var(--main-color)
+}
+.resume-item h3{
+    font-size: 2.2rem;
+}
+.resume-item .company{
+    position: relative;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+.resume-list .company::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: .5rem;
+    background: var(--main-color);
+    border-radius: 50%;
+    margin-left: -2rem;
 }
